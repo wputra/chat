@@ -1,5 +1,15 @@
-based on fitra's work:
-https://github.com/fitraditya/ubuntu-minimalistic
+qiscus/base
+===
 
-apply new tag to suit our organization:
+```
+Based on Fitra's work:
+https://github.com/fitraditya/ubuntu-minimalistic
+```
+
+Apply new tag to suit our organization:
+```
+docker pull fitra/ubuntu-minimalistic
 docker tag 75826ab927da qiscus/base
+```
+
+Should be joined in one repo in the near future.

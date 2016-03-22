@@ -1,6 +1,8 @@
 qiscus/backend
 ===
 
+You will need `build.sh` to successfully build this images
+
 ```
 docker build -t='qiscus/backend:YYMMDDXX' .
 ```

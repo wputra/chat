@@ -1,6 +1,7 @@
 FROM qiscus/base
 
 ENV BUNDLE_GEMFILE=/qiscus/Gemfile BUNDLE_JOBS=2 BUNDLE_PATH=/bundle
+ADD build.sh
 RUN echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main' >> /etc/apt/sources.list.d/brightbox-ruby-ng-trusty.list && \
 	sed -i 's/archive/ap-southeast-1.ec2.archive/g' /etc/apt/sources.list && \
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys F5DA5F09C3173AA6 && \
@@ -26,7 +27,6 @@ RUN echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main' >> 
 	apt-get clean && \
 	rm -rf /var/cache/apt /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
-ADD build.sh
 RUN bash build.sh
 
 WORKDIR /qiscus

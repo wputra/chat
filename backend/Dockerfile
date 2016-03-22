@@ -24,12 +24,10 @@ RUN echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main' >> 
 	libmagickwand-dev && \
 	apt-get autoremove -y && \
 	apt-get clean && \
-	rm -rf /var/cache/apt /var/lib/apt/lists/* /var/tmp/* /tmp/* && \
-	mkdir /qiscus
+	rm -rf /var/cache/apt /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+ADD build.sh
+RUN bash build.sh
 
 WORKDIR /qiscus
-ADD Gemfile /qiscus/Gemfile
-RUN gem install bundler && \
-	bundle install --without development test
-
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

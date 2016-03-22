@@ -16,8 +16,7 @@ RUN echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main' >> 
 	libcurl4-openssl-dev \
 	libpq5 \
 	libpq-dev \
-	sqlite3 \
-	libsqlite3-dev \
+	git-core \
 	imagemagick \
 	libmagickcore5 \
 	libmagickcore-dev \

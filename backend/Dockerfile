@@ -30,4 +30,5 @@ RUN echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main' >> 
 RUN bash /root/build.sh
 
 WORKDIR /qiscus
+EXPOSE 3000
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

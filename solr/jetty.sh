@@ -79,6 +79,11 @@ NAME=$(echo $(basename $0) | sed -e 's/^[SK][0-9]*//' -e 's/\.sh$//')
 #   no effect if start-stop-daemon exists.  Useful when JETTY_USER does not
 #   have shell access, e.g. /bin/false
 #
+JAVA_OPTIONS="-Dsolr.solr.home=/opt/solr/solr $JAVA_OPTIONS"
+JETTY_HOME=/opt/jetty
+JETTY_USER=jetty
+JETTY_LOGS=/opt/solr/logs
+JETTY_ARGS="jetty.port=8080"
 
 usage()
 {
@@ -435,7 +440,7 @@ case "$ACTION" in
         CH_USER="-c$JETTY_USER"
       fi
 
-      start-stop-daemon -S -p"$JETTY_PID" $CH_USER -d"$JETTY_BASE" -b -m -a "$JAVA" -- "${RUN_ARGS[@]}" start-log-file="$JETTY_LOGS/start.log"
+      start-stop-daemon -S -p"$JETTY_PID" $CH_USER -d"$JETTY_BASE" -m -a "$JAVA" -- "${RUN_ARGS[@]}" start-log-file="$JETTY_LOGS/start.log"
 
     else
 

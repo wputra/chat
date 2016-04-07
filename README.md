@@ -6,4 +6,5 @@ ubuntu:trusty
 	|----------	qiscus/base
 					|------	qiscus/backend
 					|------ qiscus/frontend
+					|------ qiscus/solr
 ```

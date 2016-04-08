@@ -9,7 +9,7 @@ RUN sed -i 's/archive/ap-southeast-1.ec2.archive/g' /etc/apt/sources.list \
 	&& apt-get autoremove -y \
 	&& apt-get clean \
 	&& rm -rf /var/cache/apt /var/lib/apt/lists/* /var/tmp/* /tmp/* \
-	&& useradd jetty -M -U -s /bin/false
+	&& useradd solr -M -U -s /bin/false
 
 ADD jetty.sh /
 WORKDIR /opt

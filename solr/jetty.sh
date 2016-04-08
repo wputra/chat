@@ -81,7 +81,7 @@ NAME=$(echo $(basename $0) | sed -e 's/^[SK][0-9]*//' -e 's/\.sh$//')
 #
 JAVA_OPTIONS="-Dsolr.solr.home=/opt/solr/solr $JAVA_OPTIONS"
 JETTY_HOME=/opt/jetty
-JETTY_USER=jetty
+JETTY_USER=solr
 JETTY_LOGS=/opt/solr/logs
 JETTY_ARGS="jetty.port=8080"
 
